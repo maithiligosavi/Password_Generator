@@ -22,5 +22,6 @@ This is a simple web app built using Python and Flask. It helps you generate str
 -> HTML and CSS
 
 
-![Screenshot 2025-06-12 222653](https://github.com/user-attachments/assets/d8435ca0-c065-432b-ae8b-87e446993cf6)
+
 ![Screenshot 2025-06-12 222638](https://github.com/user-attachments/assets/80d5d5ae-c3a6-47bd-9e71-25f81553a6ea)
+![Screenshot 2025-06-12 222653](https://github.com/user-attachments/assets/d8435ca0-c065-432b-ae8b-87e446993cf6)
