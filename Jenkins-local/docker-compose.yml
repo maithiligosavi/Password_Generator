@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  jenkins-master:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-master
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    networks:
+      - jenkins-net
+
+  jenkins-agent:
+    image: jenkins/inbound-agent
+    container_name: jenkins-agent
+    environment:
+      - JENKINS_URL=http://jenkins-master:8080
+      - JENKINS_AGENT_NAME=docker-agent
+      - JENKINS_SECRET=f046f03caa1041986b00f0c8084476418fa23eba78ece591215f1dc5dbcf71c8
+      - JENKINS_WEB_SOCKET=true
+    networks:
+      - jenkins-net
+
+volumes:
+  jenkins_home:
+
+networks:
+  jenkins-net:
+    driver: bridge
+
